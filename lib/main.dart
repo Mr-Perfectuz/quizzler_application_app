@@ -35,7 +35,12 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getCorrectAnswer();
 
     setState(() {
-      if (quizBrain.isFinished() == true) {}
+      if (quizBrain.isFinished() == true) {
+        Alert(
+          context: context,
+          title: 'Finished!',
+        );
+      }
       //TODO: Step 4 Part A - show an alert using rFlutter_alert (remember to read the docs for the package!)
       //HINT! Step 4 Part B is in the quiz_brain.dart
       //TODO: Step 4 Part C - reset the questionNumber,
