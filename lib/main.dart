@@ -37,16 +37,20 @@ class _QuizPageState extends State<QuizPage> {
     setState(() {
       if (quizBrain.isFinished() == true) {
         Alert(
-          context: context,
-          title: 'Finished!',
-        );
-      }
-      //TODO: Step 4 Part A - show an alert using rFlutter_alert (remember to read the docs for the package!)
-      //HINT! Step 4 Part B is in the quiz_brain.dart
-      //TODO: Step 4 Part C - reset the questionNumber,
-      //TODO: Step 4 Part D - empty out the scoreKeeper.
+                context: context,
+                title: 'Finished!',
+                desc: 'You\'ve reached at the end of the quiz.')
+            .show();
+        //HINT! Step 4 Part B is in the quiz_brain.dart
+        //TODO: Step 4 Part C - reset the questionNumber,
+        quizBrain.reset();
 
-      //TODO: Step 5 - If we've not reached the end, ELSE do the answer checking steps below 👇
+        //TODO: Step 4 Part D - empty out the scoreKeeper.
+        scoreKeeper = [];
+
+        //TODO: Step 5 - If we've not reached the end, ELSE do the answer checking steps below 👇
+      }
+
       if (userPickedAnswer == correctAnswer) {
         scoreKeeper.add(Icon(
           Icons.check,
